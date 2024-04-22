@@ -82,11 +82,15 @@ export class App extends Component {
             onImageClick={this.onImageClick}
           />
         </div>
+
         {this.state.showModal && (
-          <Modal toggleModal={this.toggleModal}>
-            <img src={this.state.image.url} alt={this.state.image.alt} />
-          </Modal>
+          <Modal
+            imgURL={this.state.image.url}
+            imgAlt={this.state.image.alt}
+            toggleModal={this.toggleModal}
+          />
         )}
+
         {this.state.showBtn && <Button onClick={this.handleOnButtonClick} />}
         {this.state.loader && <Loader />}
       </>
